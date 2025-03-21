@@ -41,3 +41,12 @@ docker image save -o <sample-service.tar> <sample-service:latest>
 ```kubectl apply -f <deployment-file.yaml>```
 ### Delete 
 ```kubectl delete -f <deployment-file.yaml>```
+## K8s Secret
+### Store the secret of docker registry in k8s secret
+```
+kubectl create secret docker-registry ghcr-secret \
+  --docker-server=ghcr.io \
+  --docker-username=your-github-username \
+  --docker-password=your-github-token \
+  --docker-email=your-email@example.com
+  ```
